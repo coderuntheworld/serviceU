@@ -1,6 +1,6 @@
 webTechnologies_project
 
-Basics website built using HTML, CSS, XML, and XSLT
+Basics website built using HTML, CSS, XML, XSLT, and basic JavaScript
 
 Date: 25 October 2019
 
