@@ -1,0 +1,196 @@
+/*
+* SENG1050 Web Technologies 
+* Assignment 2
+* Due Date: 25 October 2019
+* Extension Date: 1 November 2019
+*
+* File Name: style.css
+* Author: Isabella Andrews (C3204936)
+* Date Created: 23 August 2019
+*/
+
+body{
+	background-color: #F9FAFC;
+	background-image: url("images/background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	/* Left side margin of 1cm */
+	margin: 0 1cm 0.5cm 1cm;
+	font-family: Verdana, sans-serif;
+	font-size: 0.90em;
+	color: #424242;
+}
+
+/* Navigation Bar */
+header.navigation nav{
+	text-align: center;
+	background-color: #F9FAFC;
+	margin: 0 150px 0 150px;
+	padding: 15px;
+}
+/* Unvisited Link */
+a{
+	/*Colour updated to improve readability/contrast ratio*/
+	/*Formerly #849719*/ 
+	color: #455D05;
+	text-decoration: none;
+}
+/* Visited Link */
+a:visited{
+	/*Colour updated to improve readability/contrast ratio*/
+	/*Formerly #4D5809*/
+	color: #84051A; 
+	text-decoration: none;
+}
+/* Mouse over Link */
+a:hover{
+	color: black; 
+	font-size: 105%; 
+	text-transform: uppercase;
+}
+a:active{
+	text-decoration: underline;
+}
+/* Return to Home Page */
+/* Unvisited Link */
+a.title {
+	color: black; 
+	text-decoration: none;
+}
+/* Visited Link */
+a.title:visited {
+	color: black; 
+	text-decoration: none;
+}
+/* Mouse over Link */
+a.title:hover {
+	color: black; 
+	font-size: 100%;
+}
+
+/* Headings and Borders */ 
+h1{
+	text-align: center;
+	font-family: Georgia, Verdana, sans-serif;
+	font-size: 6em;
+	margin: 40px 150px 40px 150px;
+	padding: 20px 0 10px 0;
+	word-wrap: break-word;
+}
+h2{
+	text-align: left;
+	text-decoration: underline;
+}
+h1, h2{
+	text-transform: uppercase;
+	color: black;
+}
+h1, main{
+	border-style: groove;
+	border-width: 10px;
+	border-color: #424242;
+	background-color: #F9FAFC;
+}
+em{
+	color: #0B3861;
+}
+strong{
+	color: black;
+}
+
+/* Copyright and Contact Info */
+footer{
+	padding: 10px;
+	text-align: center;
+}
+address{
+	padding-top: 10px;
+	text-align: right;
+}
+#topLink{
+	margin: 15px 0 15px 0;
+	padding: 10px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* Images */ 
+img.small{
+	width: 100px;
+	height: 100px;
+}
+img.icon{
+	width: 50px;
+	height: 50px;
+}
+
+/* Content */ 
+main{
+	margin: 50px 150px;
+	padding: 20px 40px;
+}
+div.welcome{
+	font-size: 1em;
+	/*Removed to improve user readability*/
+	/*text-align: justify;*/
+	margin-left: 45px;
+	padding-right: 40px;
+	padding-bottom: 20px;
+}
+ul.list{
+	list-style-type: none;
+	padding-right: 40px;
+	padding-bottom: 20px;
+}
+li.services h3{
+	color: black;
+	font-size: 1.25em;
+	margin: 0;
+}
+li.services p{ 
+	font-size: 0.90em;
+	/*Removed to improve user readability*/
+	/*text-align: justify;*/
+}
+.services{
+	padding: 10px;
+	overflow: auto;
+	list-style-type: none;
+	background-color: #F9FAFC;
+}
+.services img{
+	float: left;
+	margin: 0 15px 0 0;
+	padding: 5px;
+}
+.services:hover{
+	background: #E7BE92;
+}
+div.feedback{
+	font-size: 1.25em;
+	font-style: oblique;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+/* Forms */
+select, input, textarea, a{
+	cursor: pointer;
+}
+fieldset, input[type=text], textarea{
+	border: 2px solid #455D05;
+}
+input[type=text], textarea{
+	width: 50%;
+	padding: 8px;
+	margin-top: 8px;
+	font-family: Verdana, sans-serif;
+	font-size: 80%;
+}
+legend{
+	font-weight: bold;
+}
+.disclaimer{
+	font-size: 75%;
+}

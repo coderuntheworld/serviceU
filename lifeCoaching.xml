@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="display.xsl"?>
+<!-- 
+* SENG1050 Web Technologies 
+* Assignment 2
+* Due Date: 25 October 2019
+* Extension Date: 1 November 2019
+*
+* File Name: lifeCoaching.xml
+* Author: Isabella Andrews (C3204936)
+* Date Created: 23 August 2019
+-->
+
+<!--Internal DTD-->
+<!DOCTYPE serviceU 
+[
+<!ELEMENT serviceU (business*)>
+
+<!ELEMENT business (service, businessName, businessLogo?, businessPhoto+, contact, information)>
+<!ATTLIST business id CDATA #REQUIRED> 
+<!ELEMENT service (serviceType)>
+<!ATTLIST service type (babysitting|financialAdvice|interiorDecorating|
+landscapeGardenPlanning|lifeCoaching|physicalTraining|remedialMassage) 
+#REQUIRED>
+<!ELEMENT serviceType (#PCDATA)>
+<!ELEMENT businessName (#PCDATA)>
+<!ELEMENT businessLogo (image)>
+<!ELEMENT businessPhoto (image)>
+<!ELEMENT image (#PCDATA)>
+<!-- height/width in pixels -->
+<!ATTLIST image height CDATA #REQUIRED>
+<!ATTLIST image width CDATA #IMPLIED>
+
+<!ELEMENT contact (url, email, address, phone+)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (streetNum?, streetName, suburb, state, postcode)>
+<!ELEMENT streetNum (#PCDATA)>
+<!ELEMENT streetName (#PCDATA)>
+<!ELEMENT suburb (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ENTITY NSW "New South Wales">
+<!ENTITY QLD "Queensland">
+<!ENTITY VIC "Victoria">
+<!ELEMENT postcode (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+
+<!ELEMENT information (inHomeService, hoursOfOperation+, description)>
+<!ELEMENT inHomeService (deposit?, minimumPrice, hourlyFee)>
+<!ELEMENT deposit (#PCDATA)>
+<!ELEMENT minimumPrice (#PCDATA)>
+<!ELEMENT hourlyFee (#PCDATA)>
+<!ELEMENT hoursOfOperation (day+, openTime+, closeTime+)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT openTime (#PCDATA)>
+<!ELEMENT closeTime (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+]>
+<!--XML-->
+<serviceU>
+	<!--Business ID: 5###-->
+	<business id="5001">
+		<service type="lifeCoaching">
+			<serviceType>Life Coaching</serviceType>
+		</service>
+		<businessName>Live The Life</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/ltlLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/livethelife.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.livethelife.com</url>
+			<email>admin@livethelife.com</email>
+			<address>
+				<streetNum>1256</streetNum>
+				<streetName>Ayre Lane</streetName>
+				<suburb>Collingwood</suburb>
+				<state>&VIC;</state>
+				<postcode>3066</postcode>
+			</address>
+			<phone>0365478301</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>&#36;90.00</deposit>
+				<minimumPrice>&#36;135.00</minimumPrice>
+				<hourlyFee>&#36;180.00</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Monday to Friday</day>
+				<openTime>9:00am</openTime>
+				<closeTime>5:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Live the Life provides mentoring and coaching services to those who are serious about taking their lives to the next level. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</description>
+		</information>
+	</business>
+	<!--Business ID: 5###-->
+	<business id="5002">
+		<service type="lifeCoaching">
+			<serviceType>Life Coaching</serviceType>
+		</service>
+		<businessName>Time of Your Life Coaching</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/toylLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/timeofyourlife.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.toyl.com.au</url>
+			<email>hello@toyl.com.au</email>
+			<address>
+				<streetNum>7</streetNum>
+				<streetName>Burleigh Avenue</streetName>
+				<suburb>Caringbah</suburb>
+				<state>&NSW;</state>
+				<postcode>2229</postcode>
+			</address>
+			<phone>0295258282</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>&#36;75.00</deposit>
+				<minimumPrice>&#36;75.00</minimumPrice>
+				<hourlyFee>&#36;150.00</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Monday, Wednesday and Friday</day>
+				<openTime>9:00am</openTime>
+				<closeTime>5:00pm</closeTime>
+			</hoursOfOperation>
+			<hoursOfOperation>	
+				<day>Saturday</day>
+				<openTime>9:00am</openTime>
+				<closeTime>12:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Time of Your Life Coaching offers a range of coaching strategies to ensure you're living life to its highest potential. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</description>
+		</information>
+	</business>
+	<!--Business ID: 5###-->
+	<business id="5003">
+		<service type="lifeCoaching">
+			<serviceType>Life Coaching</serviceType>
+		</service>
+		<businessName>Shine Your Light Wellness Advocates</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/sylLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/shineyourlight.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.shineyourlight.com.au</url>
+			<email>welcome@shineyourlight.com.au</email>
+			<address>
+				<streetNum>44</streetNum>
+				<streetName>Divine Street</streetName>
+				<suburb>Byron Bay</suburb>
+				<state>&NSW;</state>
+				<postcode>2481</postcode>
+			</address>
+			<phone>02 9522 1111</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>&#36;50.00</deposit>
+				<minimumPrice>&#36;50.00</minimumPrice>
+				<hourlyFee>&#36;100.00</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Thursday and Friday</day>
+				<openTime>8:00am</openTime>
+				<closeTime>6:00pm</closeTime>
+			</hoursOfOperation>
+			<hoursOfOperation>
+				<day>Saturday</day>
+				<openTime>8:00am</openTime>
+				<closeTime>2:00pm</closeTime>
+			</hoursOfOperation>
+			<hoursOfOperation>	
+				<day>Sunday</day>
+				<openTime>9:00am</openTime>
+				<closeTime>12:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Shine Your Light prides itself on its holistic approach to health and wellness, providing coaching and healing sessions as well as yoga and meditation classes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</description>
+		</information>
+	</business>
+</serviceU>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="display.xsl"?>
+<!-- 
+* SENG1050 Web Technologies 
+* Assignment 2
+* Due Date: 25 October 2019
+* Extension Date: 1 November 2019
+*
+* File Name: template.xml
+* Author: Isabella Andrews (C3204936)
+* Date Created: 23 August 2019
+-->
+
+<!--Internal DTD-->
+<!DOCTYPE serviceU 
+[
+<!ELEMENT serviceU (business*)>
+
+<!ELEMENT business (service, businessName, businessLogo?, businessPhoto+, contact, information)>
+<!ATTLIST business id CDATA #REQUIRED> 
+<!ELEMENT service (serviceType)>
+<!ATTLIST service type (babysitting|financialAdvice|interiorDecorating|
+landscapeGardenPlanning|lifeCoaching|physicalTraining|remedialMassage) 
+#REQUIRED>
+<!ELEMENT serviceType (#PCDATA)>
+<!ELEMENT businessName (#PCDATA)>
+<!ELEMENT businessLogo (image)> 
+<!ELEMENT businessPhoto (image)>
+<!ELEMENT image (#PCDATA)>
+<!-- height/width in pixels -->
+<!ATTLIST image height CDATA #REQUIRED>
+<!ATTLIST image width CDATA #REQUIRED>
+
+<!ELEMENT contact (url, email, address, phone+)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (streetNum?, streetName, suburb, state, postcode)>
+<!ELEMENT streetNum (#PCDATA)>
+<!ELEMENT streetName (#PCDATA)>
+<!ELEMENT suburb (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ENTITY NSW "New South Wales">
+<!ENTITY QLD "Queensland">
+<!ENTITY VIC "Victoria">
+<!ELEMENT postcode (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+
+<!ELEMENT information (inHomeService, hoursOfOperation+, description)>
+<!ELEMENT inHomeService (deposit?, minimumPrice, hourlyFee)>
+<!ELEMENT deposit (#PCDATA)>
+<!ELEMENT minimumPrice (#PCDATA)>
+<!ELEMENT hourlyFee (#PCDATA)>
+<!ELEMENT hoursOfOperation (day+, openTime+, closeTime+)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT openTime (#PCDATA)>
+<!ELEMENT closeTime (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+]>
+<!--XML-->
+<serviceU>
+	<!--Business ID: ####-->
+	<business id="0000">
+		<service type="babysitting">
+			<serviceType/>
+		</service>
+		<businessName/>
+		<businessLogo>
+			<image height="0" width="0"/>
+		</businessLogo>
+		<businessPhoto>
+			<image height="0" width="0"/>
+		</businessPhoto>
+		<contact>
+			<url/>
+			<email/>
+			<address>
+				<streetNum/>
+				<streetName/>
+				<suburb/>
+				<state/>
+				<postcode/>
+			</address>
+			<phone/>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit/>
+				<minimumPrice/>
+				<hourlyFee/>
+			</inHomeService>
+			<hoursOfOperation>
+				<day/>
+				<openTime/>
+				<closeTime/>
+			</hoursOfOperation>
+			<description/>
+		</information>
+	</business>
+</serviceU>

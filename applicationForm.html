@@ -1,0 +1,236 @@
+<!--
+* SENG1050 Web Technologies 
+* Assignment 2
+* Due Date: 25 October 2019
+* Extension Date: 1 November 2019
+*
+* File Name: applicationForm.html
+* Author: Isabella Andrews (C3204936)
+* Date Created: 15 September 2019
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Service U | Join</title>
+		<link rel="shortcut icon" href="images/tree.ico">
+		<!-- Document-level CSS (if appropriate) -->
+		<style>
+			div.formSub{
+				text-align: center;
+				padding-bottom: 15px;
+			}
+			input[type=checkbox], input[type=radio]{
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		</style>
+		<!-- JavaScript -->
+		<script type="text/javascript">
+			<!--
+			/* Form Validation */
+			function formValidation(){
+				var abnTest = document.appForm.abn.value;
+				var numTest = /^[0-9]+$/;
+				var emailTest =/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
+				/* Validate Text input */
+				if (document.appForm.bName.value === ""){
+					alert("Error: Trading and/or Business Name must be entered.");
+					document.appForm.bName.focus();
+					return false;
+				}
+				/* Validate ABN length (11 numbers) */
+				else if (abnTest.length !== 11){
+					alert("Error: The ABN is an invalid length, 11-digits required. Please try again.");
+					document.appForm.abn.focus();
+					return false;
+				}
+				/* Validate to allow numeric characters only */
+				else if (!abnTest.match(numTest)){
+					alert("Error: An ABN contains numbers between 0-9 only. Please try again.");
+					document.appForm.abn.focus();
+					return false;
+				}
+				/* Validate Email input */
+				else if (!emailTest.test(appForm.email.value)){
+					alert("Error: You have entered an invalid email address. Please try again.");
+					document.appForm.email.focus();
+					return false;
+				}
+				/* Validate Textarea input */
+				else if (document.getElementById("postalAddress").value === ""){
+					alert("Error: Business postal address must be entered.");
+					document.appForm.postalAddress.focus();
+					return false;
+				}
+				/* Validate Checkbox input */
+				else if (!appForm.education[0].checked &&
+					!appForm.education[1].checked &&
+					!appForm.education[2].checked &&
+					!appForm.education[3].checked &&
+					!appForm.education[4].checked &&
+					!appForm.education[5].checked &&
+					!appForm.education[6].checked){
+					alert("Error: Please select at least ONE secondary or tertiary education level from the list.");
+					return false;
+				}
+				/* Validate Radio Button input */
+				else if (!appForm.driversLicence[0].checked && 
+					!appForm.driversLicence[1].checked){
+					alert("Error: Please confirm if you hold a current Driver's Licence, Yes or No.");
+					return false;
+				}
+				/* Validate Dropdown Menu input */
+				else if (document.appForm.bYears.selectedIndex === 0) {
+					alert("Error: A selection for number of years in business must be provided.");
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+			//-->
+		</script>
+	</head>
+
+	<body>
+		<header class="navigation">
+			<div id="top"></div>
+			<!-- Navigation bar (Menu bar) -->
+			<nav>
+				<a href="placeholder.html">Domestic Cleaning</a> | 
+				<a href="placeholder.html">Financial Advice</a> | 
+				<a href="placeholder.html">Landscape &amp; Garden Planning</a> | 
+				<a href="lifeCoaching.xml">Life Coaching</a> | 
+				<a href="physicalTraining.xml">Physical Training</a> 
+			</nav>
+			<a href="index.html" class="title"><h1>Join Our Team</h1></a>	
+		</header>
+		<!-- Application Form -->
+		<main>
+			<h2>Application Form</h2>
+			<form name="appForm" id="appForm" method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi" onsubmit="return formValidation()">
+				<fieldset>
+					<legend>Business Details</legend>
+					<p class="disclaimer">Mandatory fields are marked with an asterisk (*).</p>
+					<p>
+						<!-- Business Name (textbox) -->
+						<label for="bName">Please enter the trading name of your Business*:</label><br />
+						<input type="text" size="100" name="businessName" id="bName">
+					</p>
+					<p>
+						<!-- ABN (textbox) -->
+						<label for="abn">Please enter your Australian Business Number (ABN)*:</label><br />
+						<input type="text" size="100" name="abn" id="abn" placeholder="11-digits, e.g.12345678910">
+					</p>
+					<p>
+						<!-- Business Contact (textbox) -->
+						<label for="bContact">Please enter the full name of the Owner/Manager of the Business:</label><br />
+						<input type="text" size="100" name="businessContact" id="bContact">
+					</p>
+					<p>
+						<!-- Email (textbox) -->
+						<label for="email">Please enter your Business Email Address*:</label><br />
+						<input type="text" size="100" name="email" id="email" placeholder="example@mail.com">
+					</p>
+					<p>
+						<!-- Postal Address (textarea) -->
+						<label for="postalAddress">Please enter your Business Postal Address*:</label>
+						<br />
+						<textarea name="postalAddress" id="postalAddress" form="appForm" cols="100" rows="5" placeholder="123 Example St, Example NSW 2828"></textarea>
+					</p>
+					<p>
+						<!-- Age (dropdown menu) -->
+						<label for="ageRange">Please select your Age range:</label>
+						<select name="age" id="ageRange">
+							<option value="noAnswer">Select one</option>
+							<option value="0-19 years">Under 20 years old</option>
+							<option value="20-30yrs">20-30 years old</option>
+							<option value="31-40yrs">31-40 years old</option>
+							<option value="41-50yrs">41-50 years old</option>
+							<option value="51-60yrs">51-60 years old</option>
+							<option value="60+yrs">Over 60 years old</option>
+						</select>
+					</p>
+				</fieldset>
+				<br />
+				<fieldset>
+					<legend>Business Questionnaire</legend>
+					<p style="margin-bottom: 8px;">Please select all completed levels of secondary and tertiary education*:</p>
+					<!-- Education (checkbox) -->
+					<label for="eduHSC">Year 12:</label>
+					<input type="checkbox" name="education" id="eduHSC" value="HSC" />
+					<label for="eduCert3">Certificate III:</label>
+					<input type="checkbox" name="education" id="eduCert3" value="Cert3" />
+					<label for="eduCert4">Certificate IV:</label>
+					<input type="checkbox" name="education" id="eduCert4" value="Cert4" />
+					<label for="eduDiploma">Diploma:</label>
+					<input type="checkbox" name="education" id="eduDiploma" value="Diploma" />
+					<label for="eduBachelor">Bachelor's Degree:</label>
+					<input type="checkbox" name="education" id="eduBachelor" value="Bachelor" />
+					<label for="eduMaster">Master's Degree:</label>
+					<input type="checkbox" name="education" id="eduMaster" value="Master" />
+					<label for="eduPhD">PhD:</label>
+					<input type="checkbox" name="education" id="eduPhD" value="PhD" />
+					<p>
+						<!-- Additional Qualifications (textarea) -->
+						<label for="addQual">Please detail your qualifications below, including any additional qualifications:</label>
+						<br />
+						<textarea name="additionalQualifications" id="addQual" form="appForm" cols="100" rows="10"></textarea>
+					</p>
+					<p>
+						<!-- Driver's Licence (radio buttons) -->
+						<label>Do you have a current Driver's Licence*?</label>
+						<label for="dlYes">Yes</label>
+						<input type="radio" value="Yes" name="driversLicence" id="dlYes">
+						<label for="dlNo">No</label>
+						<input type="radio" value="No" name="driversLicence" id="dlNo">
+					</p>
+					<p>
+						<!-- Years In Business (dropdown menu) -->
+						<label for="bYears">How many years have you been in Business*?</label>
+						<select name="yearsInBusiness" id="bYears">
+							<option value="noAnswer">Select one</option>
+							<option value="0-2yrs">Less than 2 years</option>
+							<option value="2-5yrs">2 to 5 years</option>
+							<option value="5-10yrs">5 to 10 years</option>
+							<option value="10+yrs">More than 10 years</option>
+						</select>
+					</p>
+				</fieldset>
+				<div class="formSub">
+					<p class="disclaimer">By submitting your personal information you agree to our <a href="termsAndConditions.html">Terms &amp; Conditions</a> and <a href="privacyPolicy.html">Privacy Policy</a>.</p>
+					<input type="submit" name="submit" value="Submit Form">
+					<input type="reset" name="reset" value="Clear Form">
+					<br />
+					<p>We look forward to welcoming you to the <strong>Service U</strong> team!</p>
+				</div>
+			</form>
+		</main>
+		<!-- Footer -->
+		<footer>
+			<div id="topLink">
+				<a href="#top">Back to top</a>
+			</div>
+			<hr />
+			<nav>
+				<a href="index.html">Home</a> |
+				<a href="aboutUs.html">About Us</a> |
+				<a href="contact.html">Contact</a> |
+				<a href="privacyPolicy.html">Privacy Policy</a> |
+				<a href="termsAndConditions.html">Terms &amp; Conditions</a> |
+				<a href="applicationForm.html">Join Our Team</a>
+			</nav>
+			<hr />
+			<address>
+				&#xA9; Isabella Andrews. All Rights Reserved.<br />
+				Student ID: C3204936<br />
+				<a href="mailto:isabella.andrews@newcastle.edu.au" target="_top">Contact Isabella via email</a><br />
+				<a href="https://www.newcastle.edu.au/course/SENG1050" target="_blank">SENG1050</a> - Assignment 2<br />
+			</address>
+		</footer>
+	</body>
+</html>

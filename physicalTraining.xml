@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="display.xsl"?>
+<!-- 
+* SENG1050 Web Technologies 
+* Assignment 2
+* Due Date: 25 October 2019
+* Extension Date: 1 November 2019
+*
+* File Name: physicalTraining.xml
+* Author: Isabella Andrews (C3204936)
+* Date Created: 23 August 2019
+-->
+
+<!--Internal DTD-->
+<!DOCTYPE serviceU 
+[
+<!ELEMENT serviceU (business*)>
+
+<!ELEMENT business (service, businessName, businessLogo?, businessPhoto+, contact, information)>
+<!ATTLIST business id CDATA #REQUIRED> 
+<!ELEMENT service (serviceType)>
+<!ATTLIST service type (babysitting|financialAdvice|interiorDecorating|
+landscapeGardenPlanning|lifeCoaching|physicalTraining|remedialMassage) 
+#REQUIRED>
+<!ELEMENT serviceType (#PCDATA)>
+<!ELEMENT businessName (#PCDATA)>
+<!ELEMENT businessLogo (image)>
+<!ELEMENT businessPhoto (image)>
+<!ELEMENT image (#PCDATA)>
+<!-- height/width in pixels -->
+<!ATTLIST image height CDATA #REQUIRED>
+<!ATTLIST image width CDATA #REQUIRED>
+
+<!ELEMENT contact (url, email, address, phone+)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (streetNum?, streetName, suburb, state, postcode)>
+<!ELEMENT streetNum (#PCDATA)>
+<!ELEMENT streetName (#PCDATA)>
+<!ELEMENT suburb (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ENTITY NSW "New South Wales">
+<!ENTITY QLD "Queensland">
+<!ENTITY VIC "Victoria">
+<!ELEMENT postcode (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+
+<!ELEMENT information (inHomeService, hoursOfOperation+, description)>
+<!ELEMENT inHomeService (deposit?, minimumPrice, hourlyFee)>
+<!ELEMENT deposit (#PCDATA)>
+<!ELEMENT minimumPrice (#PCDATA)>
+<!ELEMENT hourlyFee (#PCDATA)>
+<!ELEMENT hoursOfOperation (day+, openTime+, closeTime+)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT openTime (#PCDATA)>
+<!ELEMENT closeTime (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+]>
+<!--XML-->
+<serviceU>
+	<!--Business ID: 6###-->
+	<business id="6001">
+		<service type="physicalTraining">
+			<serviceType>Physical Training</serviceType>
+		</service>
+		<businessName>BodySculpt</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/bsLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/bodysculpt.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.bodysculpt.com</url>
+			<email>admin@bodyscuplt.com</email>
+			<address>
+				<streetNum>14</streetNum>
+				<streetName>Grey Gum Road</streetName>
+				<suburb>Denman</suburb>
+				<state>&NSW;</state>
+				<postcode>2328</postcode>
+			</address>
+			<phone>02 9542 8321</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>Not Required</deposit>
+				<minimumPrice>&#36;36.00</minimumPrice>
+				<hourlyFee>&#36;36.60</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Saturday and Sunday</day>
+				<openTime>6:00am</openTime>
+				<closeTime>6:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Bodybuilding coaches and personal trainers, nutrition programs and supplements. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</description>
+		</information>
+	</business>
+	<!--Business ID: 6###-->
+	<business id="6002">
+		<service type="physicalTraining">
+			<serviceType>Physical Training</serviceType>
+		</service>
+		<businessName>PT By Dexter</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/ptbydexterLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/ptbydexter.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.ptbydexter.com</url>
+			<email>dexter@ptbydexter.com</email>
+			<address>
+				<streetNum>5</streetNum>
+				<streetName>Train Road</streetName>
+				<suburb>Newcastle</suburb>
+				<state>&NSW;</state>
+				<postcode>2300</postcode>
+			</address>
+			<phone>02 6547 5555</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>Not Required</deposit>
+				<minimumPrice>&#36;55.00</minimumPrice>
+				<hourlyFee>&#36;55.00</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Monday to Thursday</day>
+				<openTime>8:30am</openTime>
+				<closeTime>4:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Dexter provides a personal and educated approach to help you achieve your health and fitness goals, offering flexbible hours hours and training methods, including Boxing and Taekwondo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</description>
+		</information>
+	</business>
+	<!--Business ID: 6###-->
+	<business id="6003">
+		<service type="physicalTraining">
+			<serviceType>Physical Training</serviceType>
+		</service>
+		<businessName>2 Fit 2 Quit</businessName>
+		<businessLogo>
+			<image height="100" width="100">images/2f2qLogo.png</image>
+		</businessLogo>
+		<businessPhoto>
+			<image height="100" width="100">images/2fit2quit.jpg</image>
+		</businessPhoto>
+		<contact>
+			<url>https://www.2f2q.com.au</url>
+			<email>hello@2f2q.com.au</email>
+			<address>
+				<streetNum>77</streetNum>
+				<streetName>Surf Road</streetName>
+				<suburb>Gold Coast</suburb>
+				<state>&QLD;</state>
+				<postcode>4217</postcode>
+			</address>
+			<phone>07 8439 2211</phone>
+		</contact>
+		<information>
+			<inHomeService>
+				<deposit>&#36;45.00</deposit>
+				<minimumPrice>&#36;45.00</minimumPrice>
+				<hourlyFee>&#36;45.00</hourlyFee>
+			</inHomeService>
+			<hoursOfOperation>
+				<day>Monday to Friday</day>
+				<openTime>6:00am</openTime>
+				<closeTime>10:00pm</closeTime>
+			</hoursOfOperation>
+			<hoursOfOperation>
+				<day>Saturday and Sunday</day>
+				<openTime>8:00am</openTime>
+				<closeTime>8:00pm</closeTime>
+			</hoursOfOperation>
+			<description>
+				Here at 2 Fit 2 Quit we are determined to help you achieve and maintain your greatest fitness goals, anywhere anytime. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</description>
+		</information>
+	</business>
+</serviceU>
